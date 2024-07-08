@@ -14,7 +14,14 @@ const divideNums = function(num1, num2) {
     return num1 / num2;
 }
 
-console.log(addNums(8,4));
-console.log(subtractNums(8,4));
-console.log(multiplyNums(8,4));
-console.log(divideNums(8,4));
+let firstNum;
+let operator;
+let secondNum;
+
+const operate = function(operator, num1, num2) {
+    if (operator == "add") {addNums(num1,num2);}
+    if (operator == "subtract") {subtractNums(num1,num2);}
+    if (operator == "multiply") {multiplyNums(num1,num2);}
+    if (operator == "divide") {divideNums(num1,num2);}
+
+}
