@@ -59,6 +59,32 @@ for (let i = 0; i < 5; i++)
                 calcButton.setAttribute("id", count);
                 count++;
                 buttons.appendChild(calcButton);
+                const number = "0123456789";
+                const numberExclZero = "123456789";
+                //Display numbers
+                const addDisplay = function() {
+                    if (output.textContent == "") {
+                    let text = calcButton.textContent;
+                    const apple = text
+                    .split('')
+                    .filter((num) => numberExclZero.includes(num))
+                    .join('');
+                    output.textContent += apple;
+                    }
+
+                    else {
+                        let text = calcButton.textContent;
+                        const apple = text
+                        .split('')
+                        .filter((num) => number.includes(num))
+                        .join('');
+                        output.textContent += apple;
+                        }
+                }
+                
+                calcButton.addEventListener("click", addDisplay);
+                
+
             }
             const breakDiv = document.createElement("div");
             breakDiv.classList.toggle("break");
@@ -86,3 +112,14 @@ document.getElementById("17").textContent = "0";
 document.getElementById("18").textContent = "+/-";
 document.getElementById("19").textContent = ".";
 document.getElementById("20").textContent = "=";
+
+const clearDisplay = function() {
+    output.textContent = null;
+}
+
+const deleteOneDisplay = function() {
+    output.textContent = output.textContent.substring(0, output.textContent.length - 1);
+}
+
+document.getElementById("1").addEventListener("click", clearDisplay);
+document.getElementById("2").addEventListener("click", deleteOneDisplay);
