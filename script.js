@@ -14,18 +14,6 @@ const multiplyNums = function(num1, num2) {
 const divideNums = function(num1, num2) {
     return num1 / num2;
 }
-//Create three variables for operating the calculator
-let firstNum;
-let operator;
-let secondNum;
-
-const operate = function(operator, num1, num2) {
-    if (operator == "add") {addNums(num1,num2);}
-    if (operator == "subtract") {subtractNums(num1,num2);}
-    if (operator == "multiply") {multiplyNums(num1,num2);}
-    if (operator == "divide") {divideNums(num1,num2);}
-
-}
 
 // Create calculator design
 const container = document.createElement("div");
@@ -57,8 +45,8 @@ for (let i = 0; i < 5; i++)
                 calcButton.setAttribute("id", count);
                 count++;
                 buttons.appendChild(calcButton);
-                const number = "0123456789";
-                const numberExclZero = "123456789";
+                const number = "0123456789.";
+                const numberExclZero = "123456789.";
                 //Display numbers
                 const addDisplay = function() {
                     if (output.textContent == "") {
@@ -121,3 +109,18 @@ const deleteOneDisplay = function() {
 
 document.getElementById("1").addEventListener("click", clearDisplay);
 document.getElementById("2").addEventListener("click", deleteOneDisplay);
+
+//Create three variables for operating the calculator
+let firstNum = "";
+let operator = "";
+let secondNum = "";
+
+
+//When Should FirstNum be updated
+//When an operator is selected
+//When FirstNum is empty
+
+/*if (firstNum == "" && secondNum == "") 
+    {
+        firstNum = output.textContent;
+    }*/
