@@ -42,8 +42,6 @@ const display = document.createElement("div");
 display.setAttribute("id", "display");
 display.appendChild(output);
 container.appendChild(display);
-//Dummy numbers
-output.textContent = "600";
 
 const buttons = document.createElement("div");
 buttons.setAttribute("id", "buttons");
