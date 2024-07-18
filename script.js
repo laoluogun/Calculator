@@ -1,17 +1,25 @@
 //Create four basic mathematical functions
 const addNums = function(num1, num2) {
+    num1 =parseInt(num1);
+    num2 = parseInt(num2);
     return num1 + num2;
 }
 
 const subtractNums = function(num1, num2) {
+    num1 =parseInt(num1);
+    num2 = parseInt(num2);
     return num1 - num2;
 }
 
 const multiplyNums = function(num1, num2) {
+    num1 =parseInt(num1);
+    num2 = parseInt(num2);
     return num1 * num2;
 }
 
 const divideNums = function(num1, num2) {
+    num1 =parseInt(num1);
+    num2 = parseInt(num2);
     return num1 / num2;
 }
 
@@ -143,6 +151,7 @@ const updateOperatorToDivide = function () {
         {
             operator = document.querySelector("#p4").textContent;
             console.log(operator);
+            output.textContent = "";
         }
 }
 
@@ -151,6 +160,7 @@ const updateOperatorToMultiply = function () {
         {
             operator = document.querySelector("#p8").textContent;
             console.log(operator);
+            output.textContent = "";
         }
 }
 
@@ -159,6 +169,7 @@ const updateOperatorToSubtract = function () {
         {
             operator = document.querySelector("#p12").textContent;
             console.log(operator);
+            output.textContent = "";
         }
 }
 
@@ -167,6 +178,7 @@ const updateOperatorToAdd = function () {
         {
             operator = document.querySelector("#p16").textContent;
             console.log(operator);
+            output.textContent = "";
         }
 }
 
@@ -175,4 +187,52 @@ document.getElementById("p8").addEventListener("click", updateOperatorToMultiply
 document.getElementById("p12").addEventListener("click", updateOperatorToSubtract);
 document.getElementById("p16").addEventListener("click", updateOperatorToAdd);
 
+//When should secondNum be updated
+//When BOTH firstNum and operator are != ""
 
+const updateSecondNum = function() {
+    if (firstNum != "" && operator != "")
+    {
+        secondNum = output.textContent;
+        console.log(secondNum);
+        output.textContent = "";
+    }
+}
+
+document.querySelector("#p20").addEventListener("click", updateSecondNum);
+
+const revealAnswer = function () {
+    if (operator == "+") 
+    {
+        output.textContent = addNums(firstNum, secondNum);
+        firstNum = "";
+        operator = "";
+        secondNum = "";
+    }
+
+    if (operator == "-") 
+        {
+            output.textContent = subtractNums(firstNum, secondNum);
+            firstNum = "";
+            operator = "";
+            secondNum = "";
+        }
+
+    if (operator == "*") 
+    {
+        output.textContent = multiplyNums(firstNum, secondNum);
+        firstNum = "";
+        operator = "";
+        secondNum = "";
+    }  
+
+    if (operator == "÷") 
+        {
+            output.textContent = divideNums(firstNum, secondNum);
+            firstNum = "";
+            operator = "";
+            secondNum = "";
+        }
+}
+
+document.querySelector("#p20").addEventListener("click", revealAnswer);
