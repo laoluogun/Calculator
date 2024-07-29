@@ -5,7 +5,10 @@ body {
     width: auto;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;  
+    font-size: 48px;
+    font-family: 'Poppins';
+    
 }
 
 .break {
@@ -20,7 +23,7 @@ body {
     padding: 25px 0;
     border-style: solid;
     border-color: black;
-    background-color: #BEFBFF;
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,7 +39,7 @@ body {
     border-style: solid;
     border-color: black;
     border-width: 2px;
-    background-color: #BEFBFF;
+    background-color: #DC00FF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +50,7 @@ body {
 }
 
 #output {
-    background-color: white;
+    background-color: #FAD9FF;
     border-width: 2px;
     border-color: black;
     border-style: solid;
@@ -68,16 +71,17 @@ body {
     border-style: solid;
     border-color: black;
     border-width: 0px;
-    background-color: #BEFBFF;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 0px;
+    color: white;
 }
 
 .button {
-    background-color: #BEFBFF;
+    background-color: #DC00FF;
+    color: white;
     display: flex;
     height: 76px;
     width: 125px;
@@ -88,5 +92,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 24px;
+    font-family: 'Poppins';
     cursor: pointer;
 }
+
