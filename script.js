@@ -1,26 +1,31 @@
 //Create four basic mathematical functions
 const addNums = function(num1, num2) {
-    num1 = parseInt(num1);
-    num2 = parseInt(num2);
-    return num1 + num2;
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
+    const answer = num1 + num2;
+    return Math.round(answer * 1000) / 1000;
+
 }
 
 const subtractNums = function(num1, num2) {
-    num1 =parseInt(num1);
-    num2 = parseInt(num2);
-    return num1 - num2;
+    num1 =parseFloat(num1);
+    num2 = parseFloat(num2);
+    const answer = num1 - num2;
+    return Math.round(answer * 1000) / 1000;
 }
 
 const multiplyNums = function(num1, num2) {
-    num1 =parseInt(num1);
-    num2 = parseInt(num2);
-    return num1 * num2;
+    num1 =parseFloat(num1);
+    num2 = parseFloat(num2);
+    const answer = num1 * num2;
+    return Math.round(answer * 1000) / 1000;
 }
 
 const divideNums = function(num1, num2) {
-    num1 =parseInt(num1);
-    num2 = parseInt(num2);
-    return num1 / num2;
+    num1 =parseFloat(num1);
+    num2 = parseFloat(num2);
+    const answer = num1 / num2;
+    return Math.round(answer * 1000) / 1000;
 }
 
 // Create calculator design
