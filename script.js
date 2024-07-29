@@ -1,6 +1,6 @@
 //Create four basic mathematical functions
 const addNums = function(num1, num2) {
-    num1 =parseInt(num1);
+    num1 = parseInt(num1);
     num2 = parseInt(num2);
     return num1 + num2;
 }
@@ -59,24 +59,41 @@ for (let i = 0; i < 5; i++)
                 const addDisplay = function() {
                     if (output.textContent == "") {
                     let text = calcButton.textContent;
-                    const apple = text
+                    const value = text
                     .split('')
                     .filter((num) => numberExclZero.includes(num))
                     .join('');
-                    output.textContent += apple;
+                    output.textContent += value;
                     }
 
                     else {
                         let text = calcButton.textContent;
-                        const apple = text
+                        const value = text
                         .split('')
                         .filter((num) => number.includes(num))
                         .join('');
-                        output.textContent += apple;
+                        output.textContent += value;
                         }
                 }
                 
                 calcButton.addEventListener("click", addDisplay);
+                const clearFirstNum = function() {
+                    if (firstNum == answer)
+                    {
+                        let text = calcButton.textContent;
+                        const test = text.split('');
+                        console.log(test);
+                        if (number.includes(test))
+                        {
+                            console.log(answer);
+                            output.textContent = "";
+                            firstNum = "";
+                            output.textContent += calcButton.textContent;
+                            console.log(firstNum);
+                        }
+                    }
+                }
+                calcButton.addEventListener("click", clearFirstNum);
                 
 
             }
@@ -200,39 +217,48 @@ const updateSecondNum = function() {
 }
 
 document.querySelector("#p20").addEventListener("click", updateSecondNum);
-
+let answer;
 const revealAnswer = function () {
     if (operator == "+") 
     {
         output.textContent = addNums(firstNum, secondNum);
-        firstNum = "";
+        firstNum = output.textContent;
         operator = "";
         secondNum = "";
+        answer = output.textContent;
     }
 
     if (operator == "-") 
         {
             output.textContent = subtractNums(firstNum, secondNum);
-            firstNum = "";
+            firstNum = output.textContent;
             operator = "";
             secondNum = "";
+            answer = output.textContent;
         }
 
     if (operator == "*") 
     {
         output.textContent = multiplyNums(firstNum, secondNum);
-        firstNum = "";
+        firstNum = output.textContent;
         operator = "";
         secondNum = "";
+        answer = output.textContent;
     }  
 
     if (operator == "÷") 
         {
             output.textContent = divideNums(firstNum, secondNum);
-            firstNum = "";
+            firstNum = output.textContent;
             operator = "";
             secondNum = "";
+            answer = output.textContent;
         }
 }
 
 document.querySelector("#p20").addEventListener("click", revealAnswer);
+
+//Needed checks
+//Change parseInt to parseFloat, and round all answers to three decimal points.
+//If the firstNum is trying to be updated, clear output so it doesn't collide with previous output.
+//Update design
