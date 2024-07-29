@@ -55,6 +55,7 @@ for (let i = 0; i < 5; i++)
                 buttons.appendChild(calcButton);
                 const number = "0123456789.";
                 const numberExclZero = "123456789.";
+                const operators = "÷*-+"
                 //Display numbers
                 const addDisplay = function() {
                     if (output.textContent == "") {
@@ -78,19 +79,25 @@ for (let i = 0; i < 5; i++)
                 
                 calcButton.addEventListener("click", addDisplay);
                 const clearFirstNum = function() {
-                    if (firstNum == answer)
+                    if (firstNum == answer && operator == "")
                     {
                         let text = calcButton.textContent;
                         const test = text.split('');
                         console.log(test);
-                        if (number.includes(test))
+                        console.log(firstNum);
+
+                        if (operators.includes(test))
                         {
-                            console.log(answer);
-                            output.textContent = "";
-                            firstNum = "";
-                            output.textContent += calcButton.textContent;
-                            console.log(firstNum);
+                            firstNum = answer;
                         }
+                        else if (number.includes(test))
+                            {
+                                console.log(answer);
+                                output.textContent = "";
+                                firstNum = "";
+                                output.textContent += calcButton.textContent;
+                                console.log(firstNum);
+                            }
                     }
                 }
                 calcButton.addEventListener("click", clearFirstNum);
@@ -260,5 +267,4 @@ document.querySelector("#p20").addEventListener("click", revealAnswer);
 
 //Needed checks
 //Change parseInt to parseFloat, and round all answers to three decimal points.
-//If the firstNum is trying to be updated, clear output so it doesn't collide with previous output.
 //Update design
