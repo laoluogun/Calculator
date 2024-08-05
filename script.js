@@ -61,6 +61,7 @@ for (let i = 0; i < 5; i++)
                 const number = "0123456789.";
                 const numberExclZero = "123456789.";
                 const operators = "÷*-+"
+                const sign = "+/-";
                 //Display numbers
                 const addDisplay = function() {
                     if (output.textContent == "") {
@@ -91,7 +92,13 @@ for (let i = 0; i < 5; i++)
                         console.log(test);
                         console.log(firstNum);
 
-                        if (operators.includes(test))
+                        if (sign.includes(test))
+                        {
+                            changeSign;
+                            firstNum = output.textContent;
+                            console.log(firstNum);
+                        }
+                        else if (operators.includes(test))
                         {
                             firstNum = answer;
                         }
@@ -270,6 +277,29 @@ const revealAnswer = function () {
 
 document.querySelector("#p20").addEventListener("click", revealAnswer);
 
-//Needed checks
-//Change parseInt to parseFloat, and round all answers to three decimal points.
-//Update design
+//Update minus or not
+let check = false;
+const changeSign = function() {
+    const value = output.textContent;
+    const test = "-"
+    let apple = value.split('');
+    console.log(value);
+    console.log(apple);
+    if (apple.includes(test))
+    {
+        apple.shift();
+        apple = apple.join('');
+        console.log(apple);
+        output.textContent = apple;
+    }
+
+    else {
+        apple.unshift('-');
+        console.log(apple);
+        apple = apple.join('');
+        console.log(apple);
+        output.textContent = apple;
+    }
+}
+
+document.querySelector("#p18").addEventListener('click', changeSign);
