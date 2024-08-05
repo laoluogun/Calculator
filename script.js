@@ -145,8 +145,15 @@ const deleteOneDisplay = function() {
     output.textContent = output.textContent.substring(0, output.textContent.length - 1);
 }
 
+const deleteOneOutput = function() {
+    if (firstNum = answer){
+        firstNum = output.textContent;
+    }
+}
+
 document.getElementById("p1").addEventListener("click", clearDisplay);
 document.getElementById("p2").addEventListener("click", deleteOneDisplay);
+document.getElementById("p2").addEventListener("click", deleteOneOutput);
 
 //Create three variables for operating the calculator
 let firstNum = "";
@@ -160,10 +167,7 @@ let secondNum = "";
 
 
 const updateFirstNum = function () {
-    if (firstNum == "") 
-    {
         firstNum = output.textContent;
-    }
 }
 document.getElementById("p4").addEventListener("click", updateFirstNum);
 document.getElementById("p8").addEventListener("click", updateFirstNum);
