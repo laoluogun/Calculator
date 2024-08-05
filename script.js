@@ -89,14 +89,10 @@ for (let i = 0; i < 5; i++)
                     {
                         let text = calcButton.textContent;
                         const test = text.split('');
-                        console.log(test);
-                        console.log(firstNum);
-
                         if (sign.includes(test))
                         {
                             changeSign;
                             firstNum = output.textContent;
-                            console.log(firstNum);
                         }
                         else if (operators.includes(test))
                         {
@@ -104,11 +100,9 @@ for (let i = 0; i < 5; i++)
                         }
                         else if (number.includes(test))
                             {
-                                console.log(answer);
                                 output.textContent = "";
                                 firstNum = "";
                                 output.textContent += calcButton.textContent;
-                                console.log(firstNum);
                             }
                     }
                 }
@@ -169,7 +163,6 @@ const updateFirstNum = function () {
     if (firstNum == "") 
     {
         firstNum = output.textContent;
-        console.log(firstNum);
     }
 }
 document.getElementById("p4").addEventListener("click", updateFirstNum);
@@ -186,7 +179,6 @@ const updateOperatorToDivide = function () {
     if (firstNum != "")
         {
             operator = document.querySelector("#p4").textContent;
-            console.log(operator);
             output.textContent = "";
         }
 }
@@ -195,7 +187,6 @@ const updateOperatorToMultiply = function () {
     if (firstNum != "")
         {
             operator = document.querySelector("#p8").textContent;
-            console.log(operator);
             output.textContent = "";
         }
 }
@@ -204,7 +195,6 @@ const updateOperatorToSubtract = function () {
     if (firstNum != "")
         {
             operator = document.querySelector("#p12").textContent;
-            console.log(operator);
             output.textContent = "";
         }
 }
@@ -213,7 +203,6 @@ const updateOperatorToAdd = function () {
     if (firstNum != "")
         {
             operator = document.querySelector("#p16").textContent;
-            console.log(operator);
             output.textContent = "";
         }
 }
@@ -230,7 +219,6 @@ const updateSecondNum = function() {
     if (firstNum != "" && operator != "")
     {
         secondNum = output.textContent;
-        console.log(secondNum);
         output.textContent = "";
     }
 }
@@ -283,23 +271,32 @@ const changeSign = function() {
     const value = output.textContent;
     const test = "-"
     let apple = value.split('');
-    console.log(value);
-    console.log(apple);
     if (apple.includes(test))
     {
         apple.shift();
         apple = apple.join('');
-        console.log(apple);
         output.textContent = apple;
     }
 
     else {
         apple.unshift('-');
-        console.log(apple);
         apple = apple.join('');
-        console.log(apple);
         output.textContent = apple;
     }
 }
 
 document.querySelector("#p18").addEventListener('click', changeSign);
+
+const multipleDecimals = function() {
+    const value = output.textContent;
+    const test = "."
+    let apple = value.split('');
+    if (apple.includes(test) && apple.indexOf('.') != apple.lastIndexOf('.'))
+    {
+        apple.pop();
+        apple = apple.join('');
+        output.textContent = apple;
+    }
+}
+
+document.querySelector("#p19").addEventListener('click', multipleDecimals);
